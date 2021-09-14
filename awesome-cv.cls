@@ -81,15 +81,31 @@
 % Needed to deal a paragraphs
 \RequirePackage{parskip}
 % Needed to deal hyperlink
-\RequirePackage[hidelinks,unicode]{hyperref}
+\RequirePackage[unicode]{hyperref}
 \hypersetup{%
   pdftitle={},
   pdfauthor={},
   pdfsubject={},
-  pdfkeywords={}
+  pdfkeywords={},
 }
-% for frames around words
-\RequirePackage{fancybox}
+%% for frames around words
+%\RequirePackage[framemethod=TikZ]{mdframed}
+
+%%round framed mdframed style
+%\mdfdefinestyle{roundFrameStyle}{
+%  linecolor=lightgray,
+%  roundcorner=10pt,
+%  frametitlealignment=\centering,
+%}
+
+%\newcommand\roundedFrame[1]{
+%  \newlength{\argumentWidth}
+%  \setlength{\argumentWidth}{\widthof{#1}}
+%  % \addtolength{\argumentWidth}{10pt}
+%  \begin{mdframed}[nobreak=true, userdefinedwidth=\argumentWidth]
+%    #1
+%  \end{mdframed}
+%}
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
@@ -282,15 +298,15 @@
 
 % Defines writer's email (optional)
 % Usage: \email{<email address>}
-\newcommand*{\email}[1]{\def\@email{#1}}
+\newcommand*{\email}[1]{\hypersetup{colorlinks=true,urlcolor=black}\def\@email{#1}}
 
 % Defines writer's homepage (optional)
 % Usage: \homepage{<url>}
-\newcommand*{\homepage}[1]{\def\@homepage{#1}}
+\newcommand*{\homepage}[1]{\hypersetup{colorlinks=true,urlcolor=black}\def\@homepage{#1}}
 
 % Defines writer's github (optional)
 % Usage: \github{<github-nick>}
-\newcommand*{\github}[1]{\def\@github{#1}}
+\newcommand*{\github}[1]{\hypersetup{colorlinks=true,urlcolor=black}\def\@github{#1}}
 
 % Defines writer's gitlab (optional)
 % Usage: \gitlab{<gitlab-nick>}
@@ -304,7 +320,7 @@
 
 % Defines writer's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
-\newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
+\newcommand*{\linkedin}[1]{\hypersetup{colorlinks=true,urlcolor=black}\def\@linkedin{#1}}
 
 % Defines writer's twitter (optional)
 % Usage: \twitter{<twitter handle>}
