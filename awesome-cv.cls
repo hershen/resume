@@ -88,6 +88,8 @@
   pdfsubject={},
   pdfkeywords={},
 }
+\RequirePackage{siunitx}
+
 %% for frames around words
 %\RequirePackage[framemethod=TikZ]{mdframed}
 
@@ -106,7 +108,6 @@
 %    #1
 %  \end{mdframed}
 %}
-
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
 %-------------------------------------------------------------------------------
