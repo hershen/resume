@@ -295,7 +295,7 @@
 
 % Defines writer's mobile (optional)
 % Usage: \mobile{<mobile number>}
-\newcommand*{\mobile}[1]{\def\@mobile{#1}}
+\newcommand*{\mobile}[1]{\def\@mobile{\texttt{#1}}}
 
 % Defines writer's email (optional)
 % Usage: \email{<email address>}
@@ -478,7 +478,7 @@
       \ifthenelse{\isundefined{\@mobile}}%
         {}%
         {%
-          \faMobile\acvHeaderIconSep\@mobile%
+          \faPhone\acvHeaderIconSep\@mobile%
           \setbool{isstart}{false}%
         }%
       \ifthenelse{\isundefined{\@email}}%
