@@ -80,6 +80,8 @@
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
 \RequirePackage{parskip}
+% none disables hyphenating words 
+\RequirePackage[none]{hyphenat}
 % Needed to deal hyperlink
 \RequirePackage[unicode]{hyperref}
 \hypersetup{%
