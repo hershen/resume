@@ -634,8 +634,10 @@
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
       \entrytitlestyle{#1} & \entrydatestyle{#4} \\
-      \ifempty{#2#3}{}{\entrypositionstyle{#2} & \entrylocationstyle{#3} \\}
-      \entrypositionstyle{#5} \\
+      \noalign{% noalign trick from https://tex.stackexchange.com/questions/42333/problem-with-ifthenelse-multicolumn, because multicolumn does not work well after ifthenelse
+      \ifempty{#2#3}{\gdef\hmm{}}{\gdef\hmm{\entrypositionstyle{#2} & \entrylocationstyle{#3} \\}}
+      }\hmm
+      \multicolumn{2}{l}{\entrypositionstyle{#5}} \\
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#6}}
   \end{tabular*}%
 }
