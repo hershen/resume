@@ -484,7 +484,7 @@
       \ifthenelse{\isundefined{\@mobile}}%
         {}%
         {%
-          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\large\acvHeaderSocialSep}%
           \faPhone\acvHeaderIconSep\large\@mobile%
         }%
       \ifthenelse{\isundefined{\@homepage}}%
