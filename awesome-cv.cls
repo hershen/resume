@@ -406,7 +406,7 @@
 %% Define helper macros a user can change easily
 % Header
 \newcommand{\acvHeaderNameDelim}{\space}
-\newcommand{\acvHeaderAfterNameSkip}{.4mm}
+\newcommand{\acvHeaderAfterNameSkip}{7.4mm}
 \newcommand{\acvHeaderAfterPositionSkip}{.4mm}
 \newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
@@ -475,17 +475,17 @@
     \headersocialstyle{%
       \newbool{isstart}%
       \setbool{isstart}{true}%
-      \ifthenelse{\isundefined{\@mobile}}%
-        {}%
-        {%
-          \faPhone\acvHeaderIconSep\@mobile%
-          \setbool{isstart}{false}%
-        }%
       \ifthenelse{\isundefined{\@email}}%
         {}%
         {%
+          \href{mailto:\@email}{\faEnvelope\acvHeaderIconSep\large\@email}%
+          \setbool{isstart}{false}%
+        }%
+      \ifthenelse{\isundefined{\@mobile}}%
+        {}%
+        {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{mailto:\@email}{\faEnvelope\acvHeaderIconSep\@email}%
+          \faPhone\acvHeaderIconSep\large\@mobile%
         }%
       \ifthenelse{\isundefined{\@homepage}}%
         {}%
@@ -497,7 +497,7 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\@github}%
+          \href{https://github.com/\@github}{\faGithubSquare\acvHeaderIconSep\large\@github}%
         }%
       \ifthenelse{\isundefined{\@gitlab}}%
         {}%
@@ -515,7 +515,7 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\acvHeaderIconSep\@linkedin}%
+          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\acvHeaderIconSep\large\@linkedin}%
         }%
       \ifthenelse{\isundefined{\@twitter}}%
         {}%
